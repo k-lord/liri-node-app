@@ -8,7 +8,7 @@ var searchFunction = process.argv[2];
 var searchWord = [];
 var txtSearch = false;
 
-//In case the search word is more than one word in length, this logic loops through the words and pushes them into an empty array.
+// In case the search word is more than one word in length, this logic loops through the words and pushes them into an empty array.
 
 for (var i = 3; i < process.argv.length; i++) {
     searchWord.push(process.argv[i]);
@@ -16,7 +16,7 @@ for (var i = 3; i < process.argv.length; i++) {
 
 searchWord = searchWord.join(" ");
 
-// -----------------------------------------------------------------------------------------------
+// Function logic for concertSearch, spotifySearch, and movieSearch to call node-spotify-api and axios based on provided search queries.
 
 function concertSearch(string) {
 
@@ -300,13 +300,8 @@ if (searchFunction === "concert-this") {
         }
 
         var dataArray = data.split(",");
-
-        //console.log(dataArray[0]);
-        //console.log(dataArray[1]);
-
         searchWord = dataArray[1];
         txtSearch = true;
-        //console.log("search word is: " + searchWord);
 
         if (dataArray[0] === "concert-this") {
             if (dataArray.length === 1) {
