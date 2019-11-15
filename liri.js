@@ -96,12 +96,11 @@ else if (process.argv[2] === "movie-this") {
     // If the user does not specify a movie search parameter, show information for Mr. Nobody.
 
     if (process.argv.length === 3) {
-        searchword = "Mr Nobody";
-        var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
+        var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=bf295504";
         //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
-                console.log("-------------------------------------------------------------------")
+                console.log("------------------------------------------------------------------------")
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year)
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -110,7 +109,7 @@ else if (process.argv[2] === "movie-this") {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
-                console.log("-------------------------------------------------------------------")
+                console.log("------------------------------------------------------------------------")
 
                     ;
             })
