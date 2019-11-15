@@ -7,9 +7,10 @@ var omdb = new omdb(keys.ombd);
 var bandsInTown = new bandsInTown(keys.bandsInTown);
 */
 
-//-------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 
 //In case the searched band, song, or movie is more than one word in length, this logic loops through the words and pushes them into an empty array.
+
 var searchWord = [];
 
 for (var i = 3; i < process.argv.length; i++) {
@@ -18,73 +19,89 @@ for (var i = 3; i < process.argv.length; i++) {
 
 searchWord = searchWord.join(" ");
 
-//-------------------------------------------------------------------------
+// npm packages ----------------------------------------------------------------------------------
 
 var axios = require("axios");
 var moment = require("moment");
 
-//-------------------------------------------------------------------------
+//Bands In Town API ------------------------------------------------------------------------------
 
 if (process.argv[2] === "concert-this") {
 
-    /*
-    * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
+    // If the user does not include a band name, console log that they need to add a search parameter.
 
-     * Name of the venue
-
-     * Venue location
-
-     * Date of the Event (use moment to format this as "MM/DD/YYYY")
-
-    */
-
-    var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=0eafe38939fa05eaeecc7292882b17fc";
-    console.log(queryUrl);
-    axios.get(queryUrl)
-        .then(function (response) {
-            console.log("------------------------------------------------------------------------------------------------------------------------")
-            console.log("Upcoming " + searchWord + " concerts: ");
-            console.log(" ");
-
-            for (var i = 0; i < response.data.length; i++) {
-                console.log("Venue: " + response.data[i].venue.name);
-                console.log("City: " + response.data[i].venue.city);
-                console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+    if (process.argv.length === 3) {
+        console.log("Please provide a search parameter.");
+    } 
+    
+    // Otherwise, use axios to call the API and search for the band.
+    
+    else {
+        var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=0eafe38939fa05eaeecc7292882b17fc";
+        console.log(queryUrl);
+        axios.get(queryUrl)
+            .then(function (response) {
+                console.log("------------------------------------------------------------------------")
+                console.log("Upcoming " + searchWord + " concerts: ");
                 console.log(" ");
-            }
 
-            console.log("------------------------------------------------------------------------------------------------------------------------")
-        })
-        .catch(function (error) {
-            if (error.response) {
-                // The request was made but the server responded with a status code
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.log(error.request);
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log("Error: ", error.message);
-            }
-            console.log(error.config);
-        });
+                //If there are no upcoming concerts / no API response, console.log a sentence specifying this case.
 
-    //console.log("working on getting this command to work...");
+                if (response.data.length < 1) {
+                    console.log("Sorry, there doesn't seem to be any upcoming concerts for this band or artist.")
+                } else {
+                    for (var i = 0; i < response.data.length; i++) {
+                        console.log("Venue: " + response.data[i].venue.name);
+                        console.log("City: " + response.data[i].venue.city);
+                        console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
+                        console.log(" ");
+                    };
+                }
+                console.log("------------------------------------------------------------------------")
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    // The request was made but the server responded with a status code
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log("Error: ", error.message);
+                }
+                console.log(error.config);
+            });
 
-} else if (process.argv[2] === "spotify-this-song") {
+    }
+
+
+}
+
+// Spotify API ----------------------------------------------------------------------------------
+
+else if (process.argv[2] === "spotify-this-song") {
     console.log("working on getting this command to work...");
 
-} else if (process.argv[2] === "movie-this") {
+    
+
+} 
+
+//OMDB API --------------------------------------------------------------------------------------
+
+else if (process.argv[2] === "movie-this") {
+
+    // If the user does not specify a movie search parameter, show information for Mr. Nobody.
 
     if (process.argv.length === 3) {
         searchword = "Mr Nobody";
-        var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=bf295504";
+        var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
         //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
-                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("-------------------------------------------------------------------")
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year)
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -93,7 +110,7 @@ if (process.argv[2] === "concert-this") {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
-                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("-------------------------------------------------------------------")
 
                     ;
             })
@@ -118,7 +135,7 @@ if (process.argv[2] === "concert-this") {
         //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
-                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("-------------------------------------------------------------------")
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year)
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -127,7 +144,7 @@ if (process.argv[2] === "concert-this") {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
-                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("-------------------------------------------------------------------")
             })
             .catch(function (error) {
                 if (error.response) {
@@ -147,8 +164,12 @@ if (process.argv[2] === "concert-this") {
 
     }
 
+    //-------------------------------------------------------------------------
+
 } else if (process.argv[2] === "do-what-it-says") {
     console.log("working on getting this command to work...");
+
+    //-------------------------------------------------------------------------
 
 } else {
     console.log("I don't understand that command. Try saying 'concert-this', 'spotify-this-song', 'movie-this', or 'do-what-it-says'...");
