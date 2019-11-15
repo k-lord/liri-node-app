@@ -32,14 +32,36 @@ if (process.argv[2] === "concert-this") {
 
 } else if (process.argv[2] === "movie-this") {
 
+    /*
+    * Title of the movie.
+       * Year the movie came out.
+       * IMDB Rating of the movie.
+       * Rotten Tomatoes Rating of the movie.
+       * Country where the movie was produced.
+       * Language of the movie.
+       * Plot of the movie.
+       * Actors in the movie.
+
+    */
+
     if (process.argv.length === 3) {
         searchword = "Mr Nobody";
         var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=bf295504";
-        console.log(queryUrl);
+        //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
-                console.log(response.data);
-                console.log("This movie came out in " + response.data.Year);
+                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("Title: " + response.data.Title);
+                console.log("Year: " + response.data.Year)
+                console.log("IMDB Rating: " + response.data.imdbRating);
+                console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                console.log("Country: " + response.data.Country);
+                console.log("Language: " + response.data.Language);
+                console.log("Plot: " + response.data.Plot);
+                console.log("Actors: " + response.data.Actors);
+                console.log("------------------------------------------------------------------------------------------------------------------------")
+
+                ;
             })
             .catch(function (error) {
                 if (error.response) {
@@ -59,11 +81,19 @@ if (process.argv[2] === "concert-this") {
 
     } else {
         var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
-        console.log(queryUrl);
+        //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
-                console.log(response.data);
-                console.log("This movie came out in " + response.data.Year);
+                console.log("------------------------------------------------------------------------------------------------------------------------")
+                console.log("Title: " + response.data.Title);
+                console.log("Year: " + response.data.Year)
+                console.log("IMDB Rating: " + response.data.imdbRating);
+                console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                console.log("Country: " + response.data.Country);
+                console.log("Language: " + response.data.Language);
+                console.log("Plot: " + response.data.Plot);
+                console.log("Actors: " + response.data.Actors);
+                console.log("------------------------------------------------------------------------------------------------------------------------")
             })
             .catch(function (error) {
                 if (error.response) {
@@ -82,28 +112,6 @@ if (process.argv[2] === "concert-this") {
             });
 
     }
-    /*var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
-    console.log(queryUrl);
-    axios.get(queryUrl)
-        .then(function (response) {
-            console.log(response.data);
-            console.log("This movie came out in " + response.data.Year);
-        })
-        .catch(function (error) {
-            if (error.response) {
-                // The request was made but the server responded with a status code
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.log(error.request);
-            } else {
-                // Something happened in setting up the request that triggered an Error
-                console.log("Error: ", error.message);
-            }
-            console.log(error.config);
-        });*/
 
 } else if (process.argv[2] === "do-what-it-says") {
     console.log("working on getting this command to work...");
