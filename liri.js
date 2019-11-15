@@ -21,6 +21,7 @@ searchWord = searchWord.join(" ");
 //-------------------------------------------------------------------------
 
 var axios = require("axios");
+var moment = require("moment");
 
 //-------------------------------------------------------------------------
 
@@ -48,11 +49,9 @@ if (process.argv[2] === "concert-this") {
             for (var i = 0; i < response.data.length; i++) {
                 console.log("Venue: " + response.data[i].venue.name);
                 console.log("City: " + response.data[i].venue.city);
-                console.log("Date: " + response.data[i].datetime);
+                console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
                 console.log(" ");
-
             }
-
 
             console.log("------------------------------------------------------------------------------------------------------------------------")
         })
