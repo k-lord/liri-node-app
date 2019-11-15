@@ -26,7 +26,6 @@ function concertSearch(string) {
 
         if (txtSearch === true) {
             var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=" + keys.bandsInTown.id;
-            //console.log(queryUrl);
             axios.get(queryUrl)
                 .then(function (response) {
                     console.log("------------------------------------------------------------------------");
@@ -128,7 +127,6 @@ function spotifySearch(string) {
                 if (err) {
                     return console.log("Error occurred: " + err);
                 }
-                //console.log(data.tracks.items[0]);
                 console.log("------------------------------------------------------------------------");
                 console.log("Artist: " + data.tracks.items[0].artists[0].name);
                 console.log("Song Title: " + data.tracks.items[0].name);
@@ -162,7 +160,6 @@ function spotifySearch(string) {
             if (err) {
                 return console.log("Error occurred: " + err);
             }
-            //console.log(data.tracks.items[0]);
             console.log("------------------------------------------------------------------------");
             console.log("Artist: " + data.tracks.items[0].artists[0].name);
             console.log("Song Title: " + data.tracks.items[0].name);
@@ -182,7 +179,6 @@ function movieSearch(string) {
 
         if (txtSearch === true) {
             var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
-            //console.log(queryUrl);
             axios.get(queryUrl)
                 .then(function (response) {
                     console.log("-------------------------------------------------------------------");
@@ -216,7 +212,6 @@ function movieSearch(string) {
             // If the user does not include a movie title in terminal, search for Mr Nobody.
 
             var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=" + keys.omdb.id;
-            //console.log(queryUrl);
             axios.get(queryUrl)
                 .then(function (response) {
                     console.log("------------------------------------------------------------------------");
@@ -253,7 +248,6 @@ function movieSearch(string) {
         // otherwise use axios to search the OMDB API for the movie title provided.
 
         var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
-        //console.log(queryUrl);
         axios.get(queryUrl)
             .then(function (response) {
                 console.log("-------------------------------------------------------------------");
