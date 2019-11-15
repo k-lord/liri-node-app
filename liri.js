@@ -86,19 +86,6 @@ if (process.argv[2] === "concert-this") {
 
 // Spotify API ----------------------------------------------------------------------------------
 
-/*
-
-* Artist(s)
-
-     * The song's name
-
-     * A preview link of the song from Spotify
-
-     * The album that the song is from
-
-*/
-
-
 else if (process.argv[2] === "spotify-this-song") {
 
     var spotify = new Spotify({
@@ -184,7 +171,11 @@ else if (process.argv[2] === "movie-this") {
                 console.log(error.config);
             });
 
-    } else {
+    } 
+    
+    // otherwise use axios to search the OMDB API for the movie title provided.
+    
+    else {
         var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
         //console.log(queryUrl);
         axios.get(queryUrl)
@@ -218,9 +209,13 @@ else if (process.argv[2] === "movie-this") {
 
     }
 
-    //-------------------------------------------------------------------------
+    
 
-} else if (process.argv[2] === "do-what-it-says") {
+} 
+
+// Do What It Says -------------------------------------------------------------------------
+
+else if (process.argv[2] === "do-what-it-says") {
     console.log("working on getting this command to work...");
 
     //-------------------------------------------------------------------------
