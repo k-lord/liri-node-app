@@ -20,9 +20,9 @@ searchWord = searchWord.join(" ");
 
 function concertSearch(string) {
 
-    if (string = process.argv.length === 3) {
+    if (process.argv.length === 3) {
 
-        // If the search parameters are beign called from the random.txt file
+        // If the search parameters are being called from the random.txt file:
 
         if (txtSearch === true) {
             var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=" + keys.bandsInTown.id;
@@ -62,22 +62,20 @@ function concertSearch(string) {
                     }
                     console.log(error.config);
                 });
-        }
+        } else {
 
-        // If the user does not include a band name, console log that they need to add a search parameter.
+            // If the user does not include a band name in terminal, console log that they need to add a search parameter.
 
-        else {
             console.log("------------------------------------------------------------------------");
             console.log("Please provide a band or artist search parameter to find an upcoming concert.");
             console.log("------------------------------------------------------------------------");
         }
-    }
+    } else {
 
-    // Otherwise, use axios to call the API and search for the band.
+        // Otherwise, use axios to call the API and search for the band.
 
-    else {
         var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=" + keys.bandsInTown.id;
-        //console.log(queryUrl);
+
         axios.get(queryUrl)
             .then(function (response) {
                 console.log("------------------------------------------------------------------------");
@@ -119,11 +117,11 @@ function concertSearch(string) {
 function spotifySearch(string) {
     var spotify = new Spotify(keys.spotify);
 
-    // If the user does not include a song title, search for Amber by 311.
+    // If the user does not include a song title in terminal, search for Amber by 311.
 
     if (process.argv.length === 3) {
 
-        // If the search parameters are beign called from the random.txt file
+        // If the search parameters are being called from the random.txt file
 
         if (txtSearch === true) {
             spotify.search({ type: "track", query: searchWord }, function (err, data) {
@@ -138,11 +136,10 @@ function spotifySearch(string) {
                 console.log("Album: " + data.tracks.items[0].album.name);
                 console.log("------------------------------------------------------------------------");
             });
-        }
+        } else {
 
-        // If the user does not include a song title, search for Amber by 311.
+            // If the user does not include a song title in terminal, search for Amber by 311.
 
-        else {
             spotify.search({ type: "track", query: "Amber" }, function (err, data) {
                 if (err) {
                     return console.log("Error occurred: " + err);
@@ -157,11 +154,10 @@ function spotifySearch(string) {
                 console.log("------------------------------------------------------------------------");
             });
         }
-    }
+    } else {
 
-    // Otherwise, use node-spotify-api to call the API and search for the song.
+        // Otherwise, use node-spotify-api to call the API and search for the song.
 
-    else {
         spotify.search({ type: "track", query: searchWord }, function (err, data) {
             if (err) {
                 return console.log("Error occurred: " + err);
@@ -182,7 +178,7 @@ function movieSearch(string) {
 
     if (process.argv.length === 3) {
 
-        // If the search parameters are beign called from the random.txt file
+        // If the search parameters are being called from the random.txt file
 
         if (txtSearch === true) {
             var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
@@ -215,11 +211,10 @@ function movieSearch(string) {
                     }
                     console.log(error.config);
                 });
-        }
+        } else {
 
-        // If the user does not include a movie title, search for Mr Nobody.
+            // If the user does not include a movie title in terminal, search for Mr Nobody.
 
-        else {
             var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=" + keys.omdb.id;
             //console.log(queryUrl);
             axios.get(queryUrl)
@@ -253,11 +248,10 @@ function movieSearch(string) {
                     console.log(error.config);
                 });
         }
-    }
+    } else {
 
-    // otherwise use axios to search the OMDB API for the movie title provided.
+        // otherwise use axios to search the OMDB API for the movie title provided.
 
-    else {
         var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
         //console.log(queryUrl);
         axios.get(queryUrl)
@@ -321,11 +315,27 @@ if (searchFunction === "concert-this") {
         //console.log("search word is: " + searchWord);
 
         if (dataArray[0] === "concert-this") {
-            concertSearch(searchWord);
+            if (dataArray.length === 1) {
+                console.log("------------------------------------------------------------------------");
+                console.log("Please provide a band or artist search parameter to find an upcoming concert.");
+                console.log("------------------------------------------------------------------------");
+            } else {
+                concertSearch(searchWord);
+            }
         } else if (dataArray[0] === "spotify-this-song") {
-            spotifySearch(searchWord);
+            if (dataArray.length === 1) {
+                searchWord = "Amber"
+                spotifySearch(searchWord);
+            } else {
+                spotifySearch(searchWord);
+            }
         } else if (dataArray[0] === "movie-this") {
-            movieSearch(searchWord);
+            if (dataArray.length === 1) {
+                searchWord = "Mr Nobody"
+                movieSearch(searchWord);
+            } else {
+                movieSearch(searchWord);
+            }
         } else {
             console.log("-------------------------------------------------------------------")
             console.log("I don't understand that command. Try saying 'concert-this', 'spotify-this-song', 'movie-this', or 'do-what-it-says'...");
