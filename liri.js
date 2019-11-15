@@ -25,24 +25,59 @@ var axios = require("axios");
 //-------------------------------------------------------------------------
 
 if (process.argv[2] === "concert-this") {
-    console.log("working on getting this command to work...");
+
+    /*
+    * This will search the Bands in Town Artist Events API (`"https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"`) for an artist and render the following information about each event to the terminal:
+
+     * Name of the venue
+
+     * Venue location
+
+     * Date of the Event (use moment to format this as "MM/DD/YYYY")
+
+    */
+
+    var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=0eafe38939fa05eaeecc7292882b17fc";
+    console.log(queryUrl);
+    axios.get(queryUrl)
+        .then(function (response) {
+            console.log("------------------------------------------------------------------------------------------------------------------------")
+            console.log("Upcoming " + searchWord + " concerts: ");
+            console.log(" ");
+
+            for (var i = 0; i < response.data.length; i++) {
+                console.log("Venue: " + response.data[i].venue.name);
+                console.log("City: " + response.data[i].venue.city);
+                console.log("Date: " + response.data[i].datetime);
+                console.log(" ");
+
+            }
+
+
+            console.log("------------------------------------------------------------------------------------------------------------------------")
+        })
+        .catch(function (error) {
+            if (error.response) {
+                // The request was made but the server responded with a status code
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.log(error.request);
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log("Error: ", error.message);
+            }
+            console.log(error.config);
+        });
+
+    //console.log("working on getting this command to work...");
 
 } else if (process.argv[2] === "spotify-this-song") {
     console.log("working on getting this command to work...");
 
 } else if (process.argv[2] === "movie-this") {
-
-    /*
-    * Title of the movie.
-       * Year the movie came out.
-       * IMDB Rating of the movie.
-       * Rotten Tomatoes Rating of the movie.
-       * Country where the movie was produced.
-       * Language of the movie.
-       * Plot of the movie.
-       * Actors in the movie.
-
-    */
 
     if (process.argv.length === 3) {
         searchword = "Mr Nobody";
@@ -61,7 +96,7 @@ if (process.argv[2] === "concert-this") {
                 console.log("Actors: " + response.data.Actors);
                 console.log("------------------------------------------------------------------------------------------------------------------------")
 
-                ;
+                    ;
             })
             .catch(function (error) {
                 if (error.response) {
