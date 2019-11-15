@@ -31,7 +31,58 @@ if (process.argv[2] === "concert-this") {
     console.log("working on getting this command to work...");
 
 } else if (process.argv[2] === "movie-this") {
-    var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
+
+    if (process.argv.length === 3) {
+        searchword = "Mr Nobody";
+        var queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=bf295504";
+        console.log(queryUrl);
+        axios.get(queryUrl)
+            .then(function (response) {
+                console.log(response.data);
+                console.log("This movie came out in " + response.data.Year);
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    // The request was made but the server responded with a status code
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log("Error: ", error.message);
+                }
+                console.log(error.config);
+            });
+
+    } else {
+        var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
+        console.log(queryUrl);
+        axios.get(queryUrl)
+            .then(function (response) {
+                console.log(response.data);
+                console.log("This movie came out in " + response.data.Year);
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    // The request was made but the server responded with a status code
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    // The request was made but no response was received
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log("Error: ", error.message);
+                }
+                console.log(error.config);
+            });
+
+    }
+    /*var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=bf295504";
     console.log(queryUrl);
     axios.get(queryUrl)
         .then(function (response) {
@@ -52,7 +103,7 @@ if (process.argv[2] === "concert-this") {
                 console.log("Error: ", error.message);
             }
             console.log(error.config);
-        });
+        });*/
 
 } else if (process.argv[2] === "do-what-it-says") {
     console.log("working on getting this command to work...");
