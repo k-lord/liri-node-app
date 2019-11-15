@@ -1,5 +1,3 @@
-console.log('keys.js is loaded!');
-
 //Spotify API Keys:
 exports.spotify = {
   id: process.env.SPOTIFY_ID,
