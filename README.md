@@ -7,7 +7,7 @@ LIRI is a command line node app that takes in search parameters, and using the `
     *[Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
     *[OMDB](http://omdbapi.com/)
 
-    ![](liri-giphy-1.gif)
+    ![](../assets/gifs/liri-giphy-1.gif)
 
 You can use LIRI to search for song information for a specific track, upcoming concerts for a specific band or artist, or movie information for a specific movie.
 
