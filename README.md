@@ -16,14 +16,14 @@ You can use LIRI to search for song information for a specific track, upcoming c
     ![](liri-giphy-1.gif)
     * The available search commands and responses are as follows:
         * `concert-this`: this command searches the `Bands In Town API`.
-            ![](liri-giphy-2.gif)
-            * For this command, you `must` provide a search query immediately following the command. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
-            ![](liri-giphy-3.gif)
+    ![](liri-giphy-2.gif)
+            * For this command, you _must_ provide a search query immediately following the command. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
+    ![](liri-giphy-3.gif)
             * Once a search query has been included in the command line, you will receive a response from the `Bands In Town API` that includes the following information:
                 * Name of the Venue
                 * Venue Location
                 * Date of the Event (formatted as "MM/DD/YYYY" using moment.js)
-            ![](liri-giphy-4.gif)
+    ![](liri-giphy-4.gif)
             * If the band is not currently on tour, you will receive a message stating this.
     
 
