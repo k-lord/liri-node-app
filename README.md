@@ -12,15 +12,47 @@ LIRI is a command line node app that takes in search parameters, and using the `
 You can use LIRI to search for song information for a specific track, upcoming concerts for a specific band or artist, or movie information for a specific movie.
 
 ### How to Use
-1. To use LIRI, you first must provide a search command.
-    * The available search commands and responses are as follows:
-        * `concert-this`: this command searches the `Bands In Town API`.
-            * For this command, you _must_ provide a search query immediately following the command. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
-            * Once a search query has been included in the command line, you will receive a response from the `Bands In Town API` that includes the following information:
-                * Name of the Venue
-                * Venue Location
-                * Date of the Event (formatted as "MM/DD/YYYY" using moment.js)
-            * If the band is not currently on tour, you will receive a message stating this.
+To use LIRI, you must provide a search-command and then a search-query in the command line.
+
+#### Examples
+Bands In Town Example: `node liri.js concert-this Tyler The Creator`
+Spotify Example: `node liri.js spotify-this-song Respect`
+OMDB Example: `node liri.js movie-this The Fast and The Furious Tokyo Drift`
+Random.txt Example: `node liri.js do-what-it-says`
+
+#### Reference Guide
+* The available search-commands and responses are as follows:
+    1. `concert-this`: this command searches the `Bands In Town API`.
+        * If a search-query has been included in the command line following the search-command, you will receive a response from the `Bands In Town API` that includes the following information:
+            * Name of the Venue
+            * Venue Location
+            * Date of the Event (formatted as "MM/DD/YYYY" using moment.js)
+
+        * For this command, you _must_ provide a search query following the search-command. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
+        * If the band is not currently on tour, you will receive a message stating this.
+
+    2. `spotify-this-song`: this command searches the `Node-Spotify-API`.
+        * If a search-query has been included in the command line following the search-command, you will receive a response from the `Node-Spotify-API` that includes the following information:
+            * Artist(s)
+            * The song's name
+            * A preview link of the song from Spotify
+            * The album that the song is from
+        * If a search-query has not been included after this search-command, it is set to a default response showing results for "Amber" by 311.
+
+    3. `movie-this`: this command searches the `OMDB API`.
+        * If a search-query has been included in the command line following the search-command, you will receive a response from the `OMDB API` that includes the following information:
+
+        ```
+       * Title of the movie.
+       * Year the movie came out.
+       * IMDB Rating of the movie.
+       * Rotten Tomatoes Rating of the movie.
+       * Country where the movie was produced.
+       * Language of the movie.
+       * Plot of the movie.
+       * Actors in the movie.
+        ```
+        
     
 
 ![](liri-giphy-1.gif)
