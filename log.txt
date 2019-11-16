@@ -1,21 +1,60 @@
-Upcoming Tyler The Creator concerts: 
+--------------------------------------------------------------------------
+Upcoming Death Cab concerts: 
+ 
+Venue: Ben Gibbard Solo Show - A Benefit for Aurora Commons @ Washington Hall
+City: Seattle
+Date: 12/20/2019
+ 
+Venue: Ben Gibbard Solo Show @ Pabst Theater
+City: Milwaukee
+Date: 01/23/2020
+ 
+Venue: Ben Gibbard Solo Show @ Thalia Hall
+City: Chicago
+Date: 01/24/2020
+ 
+Venue: Ben Gibbard Solo Show @ Thalia Hall
+City: Chicago
+Date: 01/25/2020
+ 
+Venue: Ben Gibbard Solo Show @ Thalia Hall
+City: Chicago
+Date: 01/26/2020
+ 
+Venue: The Showbox
+City: Seattle
+Date: 02/24/2020
+ 
+Venue: The Showbox
+City: Seattle
+Date: 02/25/2020
+ 
+Venue: The Showbox
+City: Seattle
+Date: 02/26/2020
+ 
+Venue: Innings Festival
+City: Tempe
+Date: 02/29/2020
+ 
+Venue: Tempe Beach Park
+City: Tempe
+Date: 03/01/2020
  
 --------------------------------------------------------------------------
-Venue: Field Day Festival
-City: Sydney
-Date: 01/01/2020
+Upcoming Tyler The Creator concerts: 
  
 Venue: Beyond the Valley Festival
 City: Lardner
 Date: 12/30/2019
  
-Venue: Origin Fields Festival
-City: Perth
-Date: 12/31/2019
- 
 Venue: Wildlands Festival
 City: Brisbane
 Date: 12/28/2019
+ 
+Venue: Field Day Festival
+City: Sydney
+Date: 01/01/2020
  
 Venue: Bay Dreams North Festival
 City: Mount Maunganui
@@ -24,4 +63,8 @@ Date: 01/02/2020
 Venue: Bay Dreams South Festival
 City: Nelson
 Date: 01/04/2020
+ 
+Venue: Origin Fields Festival
+City: Perth
+Date: 12/31/2019
  

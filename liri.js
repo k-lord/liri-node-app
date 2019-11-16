@@ -33,12 +33,7 @@ function concertSearch(string) {
                     console.log("Upcoming " + searchWord + " concerts: ");
                     console.log(" ");
 
-                    fs.appendFile("log.txt", br + "\n", function (err) {
-                        if (err) {
-                            console.log(err);
-                        }
-                    });
-                    fs.appendFile("log.txt", "Upcoming " + searchWord + " concerts: \n \n", function (err) {
+                    fs.appendFile("log.txt", br + "\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
                         if (err) {
                             console.log(err);
                         }
@@ -105,16 +100,33 @@ function concertSearch(string) {
                 console.log("Upcoming " + searchWord + " concerts: ");
                 console.log(" ");
 
+                fs.appendFile("log.txt", br +  "\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
+
                 //If there are no upcoming concerts / no API response, console.log a sentence specifying this case.
 
                 if (response.data.length < 1) {
                     console.log("Sorry, there doesn't seem to be any upcoming concerts for this band or artist.");
+                    fs.appendFile("log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. \n", function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
                 } else {
                     for (var i = 0; i < response.data.length; i++) {
                         console.log("Venue: " + response.data[i].venue.name);
                         console.log("City: " + response.data[i].venue.city);
                         console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
                         console.log(" ");
+
+                        fs.appendFile("log.txt","Venue: " + response.data[i].venue.name + "\nCity: " + response.data[i].venue.city+"\nDate: "+ moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n \n",function(err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                        });
                     };
                 }
                 console.log(br);
