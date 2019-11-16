@@ -19,35 +19,35 @@ To use LIRI, you must provide a `search-command` and then a `search-query` in th
 * Random.txt Example: `node liri.js do-what-it-says`
 
 #### Reference Guide
-* The available `search-commands` and responses are as follows:
-    1. `concert-this`: this command searches the `Bands In Town API`.
-        * If a `search-query` has been included in the command line following `concert-this`, you will receive a response from the `Bands In Town API` that includes the following information:
-            * Name of the Venue
-            * Venue Location
-            * Date of the Event (formatted as "MM/DD/YYYY" using `moment.js`)
+The available `search-commands` and responses are as follows:
+1. `concert-this`: this command searches the `Bands In Town API`.
+    * If a `search-query` has been included in the command line following `concert-this`, you will receive a response from the `Bands In Town API` that includes the following information:
+        * Name of the Venue
+        * Venue Location
+        * Date of the Event (formatted as "MM/DD/YYYY" using `moment.js`)
 
-        * For this command, you _must_ provide a `search-query` following `concert-this`. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
-        * If the band is not currently on tour, you will receive a message stating this.
+    * For this command, you _must_ provide a `search-query` following `concert-this`. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
+    * If the band is not currently on tour, you will receive a message stating this.
 
-    2. `spotify-this-song`: this command searches the `Node-Spotify-API`.
-        * If a `search-query` has been included in the command line following `spotify-this-song`, you will receive a response from the `Node-Spotify-API` that includes the following information:
-            * Artist(s)
-            * The song's name
-            * A preview link of the song from Spotify
-            * The album that the song is from
-        * If a `search-query` has _not_ been included after `spotify-this-song`, it is set to a default response showing results for "Amber" by 311.
+2. `spotify-this-song`: this command searches the `Node-Spotify-API`.
+    * If a `search-query` has been included in the command line following `spotify-this-song`, you will receive a response from the `Node-Spotify-API` that includes the following information:
+        * Artist(s)
+        * The song's name
+        * A preview link of the song from Spotify
+        * The album that the song is from
+    * If a `search-query` has _not_ been included after `spotify-this-song`, it is set to a default response showing results for "Amber" by 311.
 
-    3. `movie-this`: this command searches the `OMDB API`.
-        * If a `search-query` has been included in the command line following `movie-this`, you will receive a response from the `OMDB API` that includes the following information:
-            * Title of the movie.
-            * Year the movie came out.
-            * IMDB Rating of the movie.
-            * Rotten Tomatoes Rating of the movie.
-            * Country where the movie was produced.
-            * Language of the movie.
-            * Plot of the movie.
-            * Actors in the movie.
-        * If a `search-query` has _not_ been included after `movie-this`, it is set to a default response showing results for _Mr. Nobody_.
+3. `movie-this`: this command searches the `OMDB API`.
+    * If a `search-query` has been included in the command line following `movie-this`, you will receive a response from the `OMDB API` that includes the following information:
+        * Title of the movie.
+        * Year the movie came out.
+        * IMDB Rating of the movie.
+        * Rotten Tomatoes Rating of the movie.
+        * Country where the movie was produced.
+        * Language of the movie.
+        * Plot of the movie.
+        * Actors in the movie.
+    * If a `search-query` has _not_ been included after `movie-this`, it is set to a default response showing results for _Mr. Nobody_.
             
         
     
