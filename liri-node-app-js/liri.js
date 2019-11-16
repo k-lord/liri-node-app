@@ -33,7 +33,7 @@ function concertSearch(string) {
                     console.log("Upcoming " + searchWord + " concerts: ");
                     console.log(" ");
 
-                    fs.appendFile("log.txt", br + "\n\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
+                    fs.appendFile("../txt-files/log.txt", br + "\n\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
                         if (err) {
                             console.log(err);
                         }
@@ -44,7 +44,7 @@ function concertSearch(string) {
 
                     if (response.data.length < 1) {
                         console.log("Sorry, there doesn't seem to be any upcoming concerts for this band or artist.");
-                        fs.appendFile("log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. \n", function (err) {
+                        fs.appendFile("../txt-files/log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. \n", function (err) {
                             if (err) {
                                 console.log(err);
                             }
@@ -56,7 +56,7 @@ function concertSearch(string) {
                             console.log("City: " + response.data[i].venue.city);
                             console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
                             console.log(" ");
-                            fs.appendFile("log.txt","Venue: " + response.data[i].venue.name + "\nCity: " + response.data[i].venue.city+"\nDate: "+ moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n \n",function(err) {
+                            fs.appendFile("../txt-files/log.txt","Venue: " + response.data[i].venue.name + "\nCity: " + response.data[i].venue.city+"\nDate: "+ moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n \n",function(err) {
                                 if (err) {
                                     console.log(err);
                                 }
@@ -100,7 +100,7 @@ function concertSearch(string) {
                 console.log("Upcoming " + searchWord + " concerts: ");
                 console.log(" ");
 
-                fs.appendFile("log.txt", br +  "\n\nUpcoming " + searchWord + " concerts: \n\n", function (err) {
+                fs.appendFile("../txt-files/log.txt", br +  "\n\nUpcoming " + searchWord + " concerts: \n\n", function (err) {
                     if (err) {
                         console.log(err);
                     }
@@ -110,7 +110,7 @@ function concertSearch(string) {
 
                 if (response.data.length < 1) {
                     console.log("Sorry, there doesn't seem to be any upcoming concerts for this band or artist.");
-                    fs.appendFile("log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. \n", function (err) {
+                    fs.appendFile("../txt-files/log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. \n", function (err) {
                         if (err) {
                             console.log(err);
                         }
@@ -122,7 +122,7 @@ function concertSearch(string) {
                         console.log("Date: " + moment(response.data[i].datetime).format('MM/DD/YYYY'));
                         console.log(" ");
 
-                        fs.appendFile("log.txt","Venue: " + response.data[i].venue.name + "\nCity: " + response.data[i].venue.city+"\nDate: "+ moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n \n",function(err) {
+                        fs.appendFile("../txt-files/log.txt","Venue: " + response.data[i].venue.name + "\nCity: " + response.data[i].venue.city+"\nDate: "+ moment(response.data[i].datetime).format('MM/DD/YYYY') + "\n \n",function(err) {
                             if (err) {
                                 console.log(err);
                             }
@@ -168,7 +168,7 @@ function spotifySearch(string) {
                 console.log("Album: " + data.tracks.items[0].album.name);
                 console.log(br);
 
-                fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+                fs.appendFile("../txt-files/log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
                     if (err) {
                         console.log(err);
                     }
@@ -191,7 +191,7 @@ function spotifySearch(string) {
                 console.log("Album: " + data.tracks.items[0].album.name);
                 console.log(br);
 
-                fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+                fs.appendFile("../txt-files/log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
                     if (err) {
                         console.log(err);
                     }
@@ -213,7 +213,7 @@ function spotifySearch(string) {
             console.log("Album: " + data.tracks.items[0].album.name);
             console.log(br);
 
-            fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+            fs.appendFile("../txt-files/log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
                 if (err) {
                     console.log(err);
                 }
@@ -244,7 +244,7 @@ function movieSearch(string) {
                     console.log("Actors: " + response.data.Actors);
                     console.log(br);
 
-                    fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                    fs.appendFile("../txt-files/log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
                         if (err) {
                             console.log(err);
                         }
@@ -285,7 +285,7 @@ function movieSearch(string) {
                     console.log("Actors: " + response.data.Actors);
                     console.log(br);
 
-                    fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                    fs.appendFile("../txt-files/log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
                         if (err) {
                             console.log(err);
                         }
@@ -325,7 +325,7 @@ function movieSearch(string) {
                 console.log("Actors: " + response.data.Actors);
                 console.log(br);
 
-                fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                fs.appendFile("../txt-files/log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
                     if (err) {
                         console.log(err);
                     }
@@ -363,7 +363,7 @@ if (searchFunction === "concert-this") {
 
 } else if (searchFunction === "do-what-it-says") {
 
-    fs.readFile("random.txt", "utf8", function (error, data) {
+    fs.readFile("../txt-files/random.txt", "utf8", function (error, data) {
 
         if (error) {
             return console.log(error);

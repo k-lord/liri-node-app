@@ -1,0 +1,64 @@
+Venue: Ottobar
+City: Baltimore
+Date: 12/03/2019
+ 
+Venue: Long Island Sound Fest
+City: Amityville
+Date: 11/23/2019
+ 
+Venue: Cat's Cradle
+City: Carrboro
+Date: 12/04/2019
+ 
+Venue: Caledonia Lounge
+City: Athens
+Date: 12/05/2019
+ 
+Venue: Hooch and Hive
+City: Tampa
+Date: 12/06/2019
+ 
+Venue: The Earl
+City: Atlanta
+Date: 12/07/2019
+ 
+Venue: High Watt
+City: Nashville
+Date: 12/09/2019
+ 
+Venue: George's Majestic Lounge
+City: Fayetteville
+Date: 12/10/2019
+ 
+Venue: Blueberry Hill
+City: St Louis
+Date: 12/11/2019
+ 
+Venue: The Bishop
+City: Bloomington
+Date: 12/12/2019
+ 
+Venue: Big Room Bar
+City: Columbus
+Date: 12/13/2019
+ 
+Venue: Chameleon Club
+City: Lancaster
+Date: 12/14/2019
+ 
+Venue: Monty Hall
+City: Jersey City
+Date: 12/15/2019
+ 
+Venue: R.J. Daniels
+City: Rockville Centre
+Date: 12/28/2019
+ 
+Venue: The Sinclair
+City: Cambridge
+Date: 01/02/2020
+ 
+Venue: Brooklyn Bowl
+City: New York
+Date: 01/04/2020
+ 
