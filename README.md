@@ -13,10 +13,10 @@ You can use LIRI to search for song information for a specific track, upcoming c
 To use LIRI, you must provide a `search-command` and then a `search-query` in the command line.
 
 #### Examples
-* Bands In Town Example: `node liri.js concert-this Tyler The Creator`
-* Spotify Example: `node liri.js spotify-this-song Respect`
-* OMDB Example: `node liri.js movie-this The Fast and The Furious Tokyo Drift`
-* Random.txt Example: `node liri.js do-what-it-says`
+* concert-this Example: `node liri.js concert-this Tyler The Creator`
+* spotify-this-song Example: `node liri.js spotify-this-song Respect`
+* movie-this Example: `node liri.js movie-this The Fast and The Furious Tokyo Drift`
+* do-what-it-says Example: `node liri.js do-what-it-says`
 
 #### Reference Guide
 The available `search-commands` and responses are as follows:
@@ -48,24 +48,50 @@ The available `search-commands` and responses are as follows:
         * Plot of the movie.
         * Actors in the movie.
     * If a `search-query` has _not_ been included after `movie-this`, it is set to a default response showing results for _Mr. Nobody_.
+4. `do-what-it-says`: this command takes a `search-command` and `search-query` from a `random.txt` file and then provides the results in the terminal.
+    * random.txt Example: `spotify-this-song,I Want It That Way`
+        * Be mindful not to add any extra spaces or characters other than the single ',' between the `search-command` and the `search-query`.
+
+* All of the API query results are logged in a file named `log.txt` for reference.
             
         
-    
+### GIF Demonstration
+Below are screenshare `.gif` files showing the working app.
 
+#### What happens if you don't include a search-command:
 ![](liri-giphy-1.gif)
+
+#### What happens if you don't include a search-query with concert-this:
 ![](liri-giphy-2.gif)
+
+#### concert-this: it works!
 ![](liri-giphy-3.gif)
+
+#### concert-this: what if the band isn't on tour?
 ![](liri-giphy-4.gif)
+
+#### spotify-this-song: it works!
 ![](liri-giphy-5.gif)
+
+#### What happens if you don't include a search-query with spotify-this-song?
 ![](liri-giphy-6.gif)
+
+#### movie-this: it works!
 ![](liri-giphy-7.gif)
+
+#### movie-this: what happens if you don't include a search-query with movie-this?
 ![](liri-giphy-8.gif)
+
+####  do-what-it-says: it works!
 ![](liri-giphy-9.gif)
+
+#### do-what-it-says: it works, even when you change the search-command and search-queries!
 ![](liri-giphy-10.gif)
+
+#### All of your responses are saved in log.txt!
 ![](liri-giphy-11.gif)
 
-2. Give a high-level overview of how the app is organized
-3. Give start-to-finish instructions on how to run the app
+
 4. Include screenshots, gifs or videos of the app functioning
 5. Contain a link to a deployed version of the app
 6. Clearly list the technologies used in the app
