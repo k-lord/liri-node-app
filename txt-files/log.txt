@@ -288,3 +288,132 @@ Venue: circolo ohibo
 City: Milan
 Date: 11/15/2019
  
+--------------------------------------------------------------------------
+
+Upcoming pup concerts: 
+
+Venue: Electric Ballroom
+City: Little London
+Date: 11/20/2019
+ 
+Venue: Electric Ballroom
+City: London
+Date: 11/21/2019
+ 
+Venue: SWX
+City: Bristol
+Date: 11/22/2019
+ 
+Venue: O2 Academy Birmingham
+City: Birmingham
+Date: 11/23/2019
+ 
+Venue: Stylus
+City: Leeds
+Date: 11/25/2019
+ 
+Venue: The Garage (Attic Bar)
+City: Glasgow
+Date: 11/26/2019
+ 
+Venue: Riverside Newcastle
+City: Newcastle Upon Tyne
+Date: 11/28/2019
+ 
+Venue: Manchester Academy 2
+City: Manchester
+Date: 11/29/2019
+ 
+Venue: The Loft
+City: Southampton
+Date: 11/30/2019
+ 
+Venue: The Venue
+City: Peterborough
+Date: 02/20/2020
+ 
+Venue: Asbury Hall Babeville
+City: Buffalo
+Date: 02/21/2020
+ 
+Venue: The Music Hall Nightclub and Concert Theatre
+City: Oshawa
+Date: 02/22/2020
+ 
+Venue: The Van Buren
+City: Phoenix
+Date: 02/25/2020
+ 
+Venue: Sunshine Theater
+City: Albuquerque
+Date: 02/26/2020
+ 
+Venue: White Oak Music Hall
+City: Houston
+Date: 02/28/2020
+ 
+Venue: Canton Hall
+City: Dallas
+Date: 02/29/2020
+ 
+Venue: Emo's
+City: Austin
+Date: 03/01/2020
+ 
+Venue: Tower Theatre
+City: Oklahoma City
+Date: 03/02/2020
+ 
+Venue: The Waiting Room Lounge
+City: Omaha
+Date: 03/04/2020
+ 
+Venue: Ogden Theatre
+City: Denver
+Date: 03/05/2020
+ 
+Venue: The Complex
+City: Salt Lake City
+Date: 03/06/2020
+ 
+Venue: Spanish Ballroom at Elks Temple
+City: Tacoma
+Date: 03/08/2020
+ 
+Venue: Neptune Theatre
+City: Seattle
+Date: 03/09/2020
+ 
+Venue: Roseland Theater
+City: Portland
+Date: 03/10/2020
+ 
+Venue: Sessions Music Hall
+City: Eugene
+Date: 03/11/2020
+ 
+Venue: Ace Of Spades
+City: Sacramento
+Date: 03/13/2020
+ 
+Venue: The Regency Ballroom
+City: San Francisco
+Date: 03/14/2020
+ 
+Venue: Muziekcentrum Trix
+City: Antwerpen
+Date: 11/17/2019
+ 
+Venue: circolo ohibo
+City: Milan
+Date: 11/15/2019
+ 
+Venue: Trabendo
+City: Paris
+Date: 11/18/2019
+ 
+--------------------------------------------------------------------------
+
+Upcoming the spice girls concerts: 
+
+Sorry, there doesn't seem to be any upcoming concerts for this band or artist. 
