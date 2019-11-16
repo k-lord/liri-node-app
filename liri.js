@@ -243,6 +243,12 @@ function movieSearch(string) {
                     console.log("Plot: " + response.data.Plot);
                     console.log("Actors: " + response.data.Actors);
                     console.log(br);
+
+                    fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    })
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -278,6 +284,12 @@ function movieSearch(string) {
                     console.log("Plot: " + response.data.Plot);
                     console.log("Actors: " + response.data.Actors);
                     console.log(br);
+
+                    fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    })
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -312,6 +324,12 @@ function movieSearch(string) {
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
                 console.log(br);
+
+                fs.appendFile("log.txt", br + "\n\nTitle: " + response.data.Title + "\nYear: " + response.data.Year + "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n\n", function(err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                })
             })
             .catch(function (error) {
                 if (error.response) {
