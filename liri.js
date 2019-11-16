@@ -33,7 +33,7 @@ function concertSearch(string) {
                     console.log("Upcoming " + searchWord + " concerts: ");
                     console.log(" ");
 
-                    fs.appendFile("log.txt", br + "\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
+                    fs.appendFile("log.txt", br + "\n\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
                         if (err) {
                             console.log(err);
                         }
@@ -100,7 +100,7 @@ function concertSearch(string) {
                 console.log("Upcoming " + searchWord + " concerts: ");
                 console.log(" ");
 
-                fs.appendFile("log.txt", br +  "\nUpcoming " + searchWord + " concerts: \n \n", function (err) {
+                fs.appendFile("log.txt", br +  "\n\nUpcoming " + searchWord + " concerts: \n\n", function (err) {
                     if (err) {
                         console.log(err);
                     }
@@ -152,8 +152,6 @@ function concertSearch(string) {
 function spotifySearch(string) {
     var spotify = new Spotify(keys.spotify);
 
-    // If the user does not include a song title in terminal, search for Amber by 311.
-
     if (process.argv.length === 3) {
 
         // If the search parameters are being called from the random.txt file
@@ -169,6 +167,12 @@ function spotifySearch(string) {
                 console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
                 console.log("Album: " + data.tracks.items[0].album.name);
                 console.log(br);
+
+                fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
             });
         } else {
 
@@ -186,6 +190,12 @@ function spotifySearch(string) {
                 console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
                 console.log("Album: " + data.tracks.items[0].album.name);
                 console.log(br);
+
+                fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
             });
         }
     } else {
@@ -202,6 +212,12 @@ function spotifySearch(string) {
             console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
             console.log("Album: " + data.tracks.items[0].album.name);
             console.log(br);
+
+            fs.appendFile("log.txt", br + "\n\nArtist: " + data.tracks.items[0].artists[0].name + "\nSong Title: " + data.tracks.items[0].name + "\nSpotify Link: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name + "\n\n", function(err) {
+                if (err) {
+                    console.log(err);
+                }
+            });
         });
     }
 }
