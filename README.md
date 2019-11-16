@@ -91,8 +91,6 @@ Below are screenshare `.gif` files showing the working app.
 #### All of your responses are saved in log.txt!
 ![](liri-giphy-11.gif)
 
-
-4. Include screenshots, gifs or videos of the app functioning
 5. Contain a link to a deployed version of the app
 6. Clearly list the technologies used in the app
 7. State your role in the app development
