@@ -24,7 +24,7 @@ The available `search-commands` and responses are as follows:
     * If a `search-query` has been included in the command line following `concert-this`, you will receive a response from the `Bands In Town API` that includes the following information:
         * Name of the Venue
         * Venue Location
-        * Date of the Event (formatted as "MM/DD/YYYY" using `moment.js`)
+        * Date of the Event (formatted as "MM/DD/YYYY" using `moment`)
 
     * For this command, you _must_ provide a `search-query` following `concert-this`. If you do not provide a band or artist's name for which to search, you will receive a message informing you that a band or artist name is required.
     * If the band is not currently on tour, you will receive a message stating this.
@@ -91,6 +91,33 @@ Below are screenshare `.gif` files showing the working app.
 #### All of your responses are saved in log.txt!
 ![](liri-giphy-11.gif)
 
-5. Contain a link to a deployed version of the app
-6. Clearly list the technologies used in the app
-7. State your role in the app development
+### How to download LIRI?
+You can clone the LIRI git repository at [GitHub](https://github.com/k-lord/liri-node-app)
+* To run LIRI, you will first need to run `npm install` to get the node-modules for `axios`, `dotenv`, `moment`, and `node-spotify-api`.
+* You will need to create a `.env` file that contains your own personal API Keys.
+* You can request your own personal API Keys here:
+    * [Bands In Town API](http://www.artists.bandsintown.com/bandsintown-api)
+    * [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api)
+    * [OMDB](http://omdbapi.com/)
+* Your `.env` file should be formatted as follows:
+
+```
+# Spotify API keys
+
+SPOTIFY_ID=YOUR_ID_HERE
+SPOTIFY_SECRET=YOUR_ID_HERE
+
+# OMDB API key
+
+OMDB_ID=YOUR_ID_HERE
+
+# Bands In Town API key
+
+BANDS_ID=YOUR_ID_HERE
+
+```
+
+### Technologies and Languages Used
+This app was built just using javascript, node, and the npm `axios`, `moment`, `node-spotify-api`, and `dotenv` packages.
+
+
