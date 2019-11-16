@@ -1,1 +1,27 @@
---------------------------------------------------------------------------/nUpcoming Spice Girls concerts: /n /nSorry, there doesn't seem to be any upcoming concerts for this band or artist. /n
+Upcoming Tyler The Creator concerts: 
+ 
+--------------------------------------------------------------------------
+Venue: Field Day Festival
+City: Sydney
+Date: 01/01/2020
+ 
+Venue: Beyond the Valley Festival
+City: Lardner
+Date: 12/30/2019
+ 
+Venue: Origin Fields Festival
+City: Perth
+Date: 12/31/2019
+ 
+Venue: Wildlands Festival
+City: Brisbane
+Date: 12/28/2019
+ 
+Venue: Bay Dreams North Festival
+City: Mount Maunganui
+Date: 01/02/2020
+ 
+Venue: Bay Dreams South Festival
+City: Nelson
+Date: 01/04/2020
+ 
