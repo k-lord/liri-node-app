@@ -7,6 +7,7 @@ var Spotify = require('node-spotify-api');
 var searchFunction = process.argv[2];
 var searchWord = [];
 var txtSearch = false;
+var br = "--------------------------------------------------------------------------";
 
 // In case the search word is more than one word in length, this logic loops through the words and pushes them into an empty array.
 
@@ -28,14 +29,32 @@ function concertSearch(string) {
             var queryUrl = "https://rest.bandsintown.com/artists/" + searchWord + "/events?app_id=" + keys.bandsInTown.id;
             axios.get(queryUrl)
                 .then(function (response) {
-                    console.log("------------------------------------------------------------------------");
+                    console.log(br);
                     console.log("Upcoming " + searchWord + " concerts: ");
                     console.log(" ");
+
+                    fs.appendFile("log.txt", br + "/n", function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                    fs.appendFile("log.txt", "Upcoming " + searchWord + " concerts: /n /n", function (err) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                    
 
                     //If there are no upcoming concerts / no API response, console.log a sentence specifying this case.
 
                     if (response.data.length < 1) {
                         console.log("Sorry, there doesn't seem to be any upcoming concerts for this band or artist.");
+                        fs.appendFile("log.txt", "Sorry, there doesn't seem to be any upcoming concerts for this band or artist. /n", function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                        });
+                        
                     } else {
                         for (var i = 0; i < response.data.length; i++) {
                             console.log("Venue: " + response.data[i].venue.name);
@@ -44,7 +63,7 @@ function concertSearch(string) {
                             console.log(" ");
                         };
                     }
-                    console.log("------------------------------------------------------------------------");
+                    console.log(br);
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -65,9 +84,9 @@ function concertSearch(string) {
 
             // If the user does not include a band name in terminal, console log that they need to add a search parameter.
 
-            console.log("------------------------------------------------------------------------");
+            console.log(br);
             console.log("Please provide a band or artist search parameter to find an upcoming concert.");
-            console.log("------------------------------------------------------------------------");
+            console.log(br);
         }
     } else {
 
@@ -77,7 +96,7 @@ function concertSearch(string) {
 
         axios.get(queryUrl)
             .then(function (response) {
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
                 console.log("Upcoming " + searchWord + " concerts: ");
                 console.log(" ");
 
@@ -93,7 +112,7 @@ function concertSearch(string) {
                         console.log(" ");
                     };
                 }
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
             })
             .catch(function (error) {
                 if (error.response) {
@@ -127,12 +146,12 @@ function spotifySearch(string) {
                 if (err) {
                     return console.log("Error occurred: " + err);
                 }
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
                 console.log("Artist: " + data.tracks.items[0].artists[0].name);
                 console.log("Song Title: " + data.tracks.items[0].name);
                 console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
                 console.log("Album: " + data.tracks.items[0].album.name);
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
             });
         } else {
 
@@ -142,14 +161,14 @@ function spotifySearch(string) {
                 if (err) {
                     return console.log("Error occurred: " + err);
                 }
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
                 console.log("Since you didn't provide a song title, here's a song recommendation for you: ");
                 console.log(" ");
                 console.log("Artist: " + data.tracks.items[0].artists[0].name);
                 console.log("Song Title: " + data.tracks.items[0].name);
                 console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
                 console.log("Album: " + data.tracks.items[0].album.name);
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
             });
         }
     } else {
@@ -160,12 +179,12 @@ function spotifySearch(string) {
             if (err) {
                 return console.log("Error occurred: " + err);
             }
-            console.log("------------------------------------------------------------------------");
+            console.log(br);
             console.log("Artist: " + data.tracks.items[0].artists[0].name);
             console.log("Song Title: " + data.tracks.items[0].name);
             console.log("Spotify link: " + data.tracks.items[0].external_urls.spotify);
             console.log("Album: " + data.tracks.items[0].album.name);
-            console.log("------------------------------------------------------------------------");
+            console.log(br);
         });
     }
 }
@@ -181,7 +200,7 @@ function movieSearch(string) {
             var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
             axios.get(queryUrl)
                 .then(function (response) {
-                    console.log("-------------------------------------------------------------------");
+                    console.log(br);
                     console.log("Title: " + response.data.Title);
                     console.log("Year: " + response.data.Year)
                     console.log("IMDB Rating: " + response.data.imdbRating);
@@ -190,7 +209,7 @@ function movieSearch(string) {
                     console.log("Language: " + response.data.Language);
                     console.log("Plot: " + response.data.Plot);
                     console.log("Actors: " + response.data.Actors);
-                    console.log("-------------------------------------------------------------------");
+                    console.log(br);
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -214,7 +233,7 @@ function movieSearch(string) {
             var queryUrl = "http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&apikey=" + keys.omdb.id;
             axios.get(queryUrl)
                 .then(function (response) {
-                    console.log("------------------------------------------------------------------------");
+                    console.log(br);
                     console.log("Since you didn't provide a movie title, here's a movie recommendation for you: ");
                     console.log(" ");
                     console.log("Title: " + response.data.Title);
@@ -225,7 +244,7 @@ function movieSearch(string) {
                     console.log("Language: " + response.data.Language);
                     console.log("Plot: " + response.data.Plot);
                     console.log("Actors: " + response.data.Actors);
-                    console.log("------------------------------------------------------------------------");
+                    console.log(br);
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -250,7 +269,7 @@ function movieSearch(string) {
         var queryUrl = "http://www.omdbapi.com/?t=" + searchWord + "&y=&plot=short&apikey=" + keys.omdb.id;
         axios.get(queryUrl)
             .then(function (response) {
-                console.log("-------------------------------------------------------------------");
+                console.log(br);
                 console.log("Title: " + response.data.Title);
                 console.log("Year: " + response.data.Year)
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -259,7 +278,7 @@ function movieSearch(string) {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
-                console.log("-------------------------------------------------------------------");
+                console.log(br);
             })
             .catch(function (error) {
                 if (error.response) {
@@ -305,9 +324,9 @@ if (searchFunction === "concert-this") {
 
         if (dataArray[0] === "concert-this") {
             if (dataArray.length === 1) {
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
                 console.log("Please provide a band or artist search parameter to find an upcoming concert.");
-                console.log("------------------------------------------------------------------------");
+                console.log(br);
             } else {
                 concertSearch(searchWord);
             }
@@ -326,15 +345,15 @@ if (searchFunction === "concert-this") {
                 movieSearch(searchWord);
             }
         } else {
-            console.log("-------------------------------------------------------------------")
+            console.log(br)
             console.log("I don't understand that command. Try saying 'concert-this', 'spotify-this-song', 'movie-this', or 'do-what-it-says'...");
-            console.log("-------------------------------------------------------------------")
+            console.log(br)
         }
     });
 
 } else {
-    console.log("-------------------------------------------------------------------")
+    console.log(br)
     console.log("I don't understand that command. Try saying 'concert-this', 'spotify-this-song', 'movie-this', or 'do-what-it-says'...");
-    console.log("-------------------------------------------------------------------")
+    console.log(br)
 }
 
